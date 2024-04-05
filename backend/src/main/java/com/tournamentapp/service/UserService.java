@@ -26,7 +26,7 @@ public class UserService {
     public UserPasswordResetEmailResponseDTO createUser(UserCreateRequestDTO req) {
         User found = userRepo.findByEmail(req.email);
         if (found != null) {
-            throw new IllegalArgumentException("email already used");
+           throw new IllegalArgumentException("email already used");
         }
         User user = new User();
 
